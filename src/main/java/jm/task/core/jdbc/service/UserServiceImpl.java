@@ -6,11 +6,11 @@ import jm.task.core.jdbc.model.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends UserDaoJDBCImpl implements UserService {
     public UserServiceImpl() {
     }
 
-    private UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
+    private UserDaoJDBCImpl userDaoJDBC = new UserServiceImpl();
 
     public void createUsersTable() throws SQLException {
         userDaoJDBC.createUsersTable();
